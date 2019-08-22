@@ -1,0 +1,8 @@
+(executable
+  (name example)
+  (libraries astring containers menhirLib sedlex ppxlib ppx_deriving)
+  (preprocess (pps sedlex.ppx ppx_deriving.std))
+)
+
+(menhir (flags --table ) (modules json_parser))
+
