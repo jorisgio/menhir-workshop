@@ -4,5 +4,5 @@
   (preprocess (pps sedlex.ppx ppx_deriving.std))
 )
 
-(menhir (flags --table ) (modules json_parser))
+(menhir (flags --table --canonical) (modules json_parser))
 

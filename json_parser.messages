@@ -1,0 +1,184 @@
+json: LBRACKET RBRACKET STRING
+##
+## Ends in an error in state: 30.
+##
+## json -> LBRACKET loption(separated_nonempty_list(COMMA,field)) RBRACKET . EOF [ # ]
+##
+## The known suffix of the stack is as follows:
+## LBRACKET loption(separated_nonempty_list(COMMA,field)) RBRACKET
+##
+
+Unexpected string after end of object
+
+json: LBRACKET RSQUARE
+##
+## Ends in an error in state: 1.
+##
+## json -> LBRACKET . loption(separated_nonempty_list(COMMA,field)) RBRACKET EOF [ # ]
+##
+## The known suffix of the stack is as follows:
+## LBRACKET
+##
+
+Unexpected list in in object key
+
+json: LBRACKET STRING COLON LBRACKET RSQUARE
+##
+## Ends in an error in state: 20.
+##
+## json_value -> LBRACKET . loption(separated_nonempty_list(COMMA,field)) RBRACKET [ RBRACKET COMMA ]
+##
+## The known suffix of the stack is as follows:
+## LBRACKET
+##
+
+Unexpected list after end of object
+
+json: LBRACKET STRING COLON LSQUARE LBRACKET RBRACKET EOF COMMA STRING
+##
+## Ends in an error in state: 18.
+##
+## separated_nonempty_list(COMMA,json) -> json COMMA . separated_nonempty_list(COMMA,json) [ RSQUARE ]
+##
+## The known suffix of the stack is as follows:
+## json COMMA
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+json: LBRACKET STRING COLON LSQUARE LBRACKET RBRACKET EOF STRING
+##
+## Ends in an error in state: 17.
+##
+## separated_nonempty_list(COMMA,json) -> json . [ RSQUARE ]
+## separated_nonempty_list(COMMA,json) -> json . COMMA separated_nonempty_list(COMMA,json) [ RSQUARE ]
+##
+## The known suffix of the stack is as follows:
+## json
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+json: LBRACKET STRING COLON LSQUARE LBRACKET RBRACKET STRING
+##
+## Ends in an error in state: 12.
+##
+## json -> LBRACKET loption(separated_nonempty_list(COMMA,field)) RBRACKET . EOF [ RSQUARE COMMA ]
+##
+## The known suffix of the stack is as follows:
+## LBRACKET loption(separated_nonempty_list(COMMA,field)) RBRACKET
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+json: LBRACKET STRING COLON LSQUARE LBRACKET RSQUARE
+##
+## Ends in an error in state: 9.
+##
+## json -> LBRACKET . loption(separated_nonempty_list(COMMA,field)) RBRACKET EOF [ RSQUARE COMMA ]
+##
+## The known suffix of the stack is as follows:
+## LBRACKET
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+json: LBRACKET STRING COLON LSQUARE STRING
+##
+## Ends in an error in state: 8.
+##
+## json_value -> LSQUARE . loption(separated_nonempty_list(COMMA,json)) RSQUARE [ RBRACKET COMMA ]
+##
+## The known suffix of the stack is as follows:
+## LSQUARE
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+json: LBRACKET STRING COLON MINUS STRING
+##
+## Ends in an error in state: 6.
+##
+## json_value -> MINUS . INT [ RBRACKET COMMA ]
+##
+## The known suffix of the stack is as follows:
+## MINUS
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+json: LBRACKET STRING COLON PLUS EOF
+##
+## Ends in an error in state: 24.
+##
+## json_value -> option(PLUS) . INT [ RBRACKET COMMA ]
+##
+## The known suffix of the stack is as follows:
+## option(PLUS)
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+json: LBRACKET STRING COLON RSQUARE
+##
+## Ends in an error in state: 3.
+##
+## separated_nonempty_list(COMMA,field) -> STRING COLON . json_value [ RBRACKET ]
+## separated_nonempty_list(COMMA,field) -> STRING COLON . json_value COMMA separated_nonempty_list(COMMA,field) [ RBRACKET ]
+##
+## The known suffix of the stack is as follows:
+## STRING COLON
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+json: LBRACKET STRING COLON STRING COMMA RSQUARE
+##
+## Ends in an error in state: 27.
+##
+## separated_nonempty_list(COMMA,field) -> STRING COLON json_value COMMA . separated_nonempty_list(COMMA,field) [ RBRACKET ]
+##
+## The known suffix of the stack is as follows:
+## STRING COLON json_value COMMA
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+json: LBRACKET STRING COLON STRING STRING
+##
+## Ends in an error in state: 26.
+##
+## separated_nonempty_list(COMMA,field) -> STRING COLON json_value . [ RBRACKET ]
+## separated_nonempty_list(COMMA,field) -> STRING COLON json_value . COMMA separated_nonempty_list(COMMA,field) [ RBRACKET ]
+##
+## The known suffix of the stack is as follows:
+## STRING COLON json_value
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+json: LBRACKET STRING STRING
+##
+## Ends in an error in state: 2.
+##
+## separated_nonempty_list(COMMA,field) -> STRING . COLON json_value [ RBRACKET ]
+## separated_nonempty_list(COMMA,field) -> STRING . COLON json_value COMMA separated_nonempty_list(COMMA,field) [ RBRACKET ]
+##
+## The known suffix of the stack is as follows:
+## STRING
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+json: STRING
+##
+## Ends in an error in state: 0.
+##
+## json' -> . json [ # ]
+##
+## The known suffix of the stack is as follows:
+##
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+

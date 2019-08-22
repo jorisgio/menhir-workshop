@@ -4,6 +4,7 @@
 %token<string> STRING
 %token<bool> BOOL
 %token<int> INT
+%on_error_reduce EOF
 
 %{
   (* exception ParseError of token * Lexing.position * Lexing.position *)
