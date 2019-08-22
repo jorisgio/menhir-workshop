@@ -68,7 +68,7 @@ json: LBRACKET STRING COLON LSQUARE MINUS STRING
 ## MINUS
 ##
 
- Unexpected arithmetic operation applied to non number value inside list
+Unexpected arithmetic operation applied to non number value inside list
 
 json: LBRACKET STRING COLON LSQUARE PLUS EOF
 ##
@@ -80,7 +80,7 @@ json: LBRACKET STRING COLON LSQUARE PLUS EOF
 ## option(PLUS)
 ##
 
-Unexpected arithmetic operatorion applied to non number value 
+Unexpected arithmetic operation applied to non number value
 
 json: LBRACKET STRING COLON LSQUARE RBRACKET
 ##
@@ -92,7 +92,7 @@ json: LBRACKET STRING COLON LSQUARE RBRACKET
 ## LSQUARE
 ##
 
-<YOUR SYNTAX ERROR MESSAGE HERE>
+Unclosed list in object field
 
 json: LBRACKET STRING COLON LSQUARE STRING COMMA RSQUARE
 ##
@@ -104,7 +104,7 @@ json: LBRACKET STRING COLON LSQUARE STRING COMMA RSQUARE
 ## json_value COMMA
 ##
 
-<YOUR SYNTAX ERROR MESSAGE HERE>
+Trailing separator in list
 
 json: LBRACKET STRING COLON LSQUARE STRING STRING
 ##
@@ -117,7 +117,7 @@ json: LBRACKET STRING COLON LSQUARE STRING STRING
 ## json_value
 ##
 
-<YOUR SYNTAX ERROR MESSAGE HERE>
+Missing list separator between values
 
 json: LBRACKET STRING COLON MINUS STRING
 ##
@@ -129,7 +129,7 @@ json: LBRACKET STRING COLON MINUS STRING
 ## MINUS
 ##
 
-<YOUR SYNTAX ERROR MESSAGE HERE>
+Unexpected arithmetic operation on non number value
 
 json: LBRACKET STRING COLON PLUS EOF
 ##
@@ -154,7 +154,7 @@ json: LBRACKET STRING COLON RSQUARE
 ## STRING COLON
 ##
 
-<YOUR SYNTAX ERROR MESSAGE HERE>
+Invalid list
 
 json: LBRACKET STRING COLON STRING COMMA RSQUARE
 ##
@@ -166,7 +166,7 @@ json: LBRACKET STRING COLON STRING COMMA RSQUARE
 ## STRING COLON json_value COMMA
 ##
 
-<YOUR SYNTAX ERROR MESSAGE HERE>
+Missing field key or value
 
 json: LBRACKET STRING COLON STRING STRING
 ##
@@ -192,7 +192,7 @@ json: LBRACKET STRING STRING
 ## STRING
 ##
 
-Missing list separator
+Missing field value
 
 json: STRING
 ##
