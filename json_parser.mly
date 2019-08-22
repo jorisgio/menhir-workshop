@@ -4,7 +4,6 @@
 %token<string> STRING
 %token<bool> BOOL
 %token<int> INT
-%on_error_reduce EOF
 
 %{
   (* exception ParseError of token * Lexing.position * Lexing.position *)
@@ -29,7 +28,7 @@ let assoc ==
   | LBRACKET; fields = separated_list(COMMA, field); RBRACKET; { make $loc (Assoc fields) }
 
 let array ==
-  | LSQUARE; elems = separated_list(COMMA, json); RSQUARE; { make $loc (List elems) }
+  | LSQUARE; elems = separated_list(COMMA, json_value); RSQUARE; { make $loc (List elems) }
 
 let number ==
   | PLUS?; ~ = INT; <>

@@ -8,7 +8,7 @@ json: LBRACKET RBRACKET STRING
 ## LBRACKET loption(separated_nonempty_list(COMMA,field)) RBRACKET
 ##
 
-Unexpected string after end of object
+Unexpected value after end of object
 
 json: LBRACKET RSQUARE
 ##
@@ -20,7 +20,7 @@ json: LBRACKET RSQUARE
 ## LBRACKET
 ##
 
-Unexpected list in in object key
+Unexpected list in object key
 
 json: LBRACKET STRING COLON LBRACKET RSQUARE
 ##
@@ -32,7 +32,7 @@ json: LBRACKET STRING COLON LBRACKET RSQUARE
 ## LBRACKET
 ##
 
-Unexpected list after end of object
+Unexpected list termination in object key position
 
 json: LBRACKET STRING COLON LSQUARE LBRACKET RBRACKET EOF COMMA STRING
 ##
@@ -44,7 +44,7 @@ json: LBRACKET STRING COLON LSQUARE LBRACKET RBRACKET EOF COMMA STRING
 ## json COMMA
 ##
 
-<YOUR SYNTAX ERROR MESSAGE HERE>
+Unclosed list at end of input after empty object
 
 json: LBRACKET STRING COLON LSQUARE LBRACKET RBRACKET EOF STRING
 ##
@@ -57,7 +57,7 @@ json: LBRACKET STRING COLON LSQUARE LBRACKET RBRACKET EOF STRING
 ## json
 ##
 
-<YOUR SYNTAX ERROR MESSAGE HERE>
+Unclosed list at end of input
 
 json: LBRACKET STRING COLON LSQUARE LBRACKET RBRACKET STRING
 ##
@@ -69,7 +69,7 @@ json: LBRACKET STRING COLON LSQUARE LBRACKET RBRACKET STRING
 ## LBRACKET loption(separated_nonempty_list(COMMA,field)) RBRACKET
 ##
 
-<YOUR SYNTAX ERROR MESSAGE HERE>
+Unclosed list before the end of object
 
 json: LBRACKET STRING COLON LSQUARE LBRACKET RSQUARE
 ##
@@ -81,7 +81,7 @@ json: LBRACKET STRING COLON LSQUARE LBRACKET RSQUARE
 ## LBRACKET
 ##
 
-<YOUR SYNTAX ERROR MESSAGE HERE>
+Mis-nested list and objects
 
 json: LBRACKET STRING COLON LSQUARE STRING
 ##
@@ -91,7 +91,6 @@ json: LBRACKET STRING COLON LSQUARE STRING
 ##
 ## The known suffix of the stack is as follows:
 ## LSQUARE
-##
 
 <YOUR SYNTAX ERROR MESSAGE HERE>
 
@@ -105,7 +104,7 @@ json: LBRACKET STRING COLON MINUS STRING
 ## MINUS
 ##
 
-<YOUR SYNTAX ERROR MESSAGE HERE>
+Invalid arithmetic operation '-' on string
 
 json: LBRACKET STRING COLON PLUS EOF
 ##
@@ -117,7 +116,7 @@ json: LBRACKET STRING COLON PLUS EOF
 ## option(PLUS)
 ##
 
-<YOUR SYNTAX ERROR MESSAGE HERE>
+Expecting number before end of input
 
 json: LBRACKET STRING COLON RSQUARE
 ##
@@ -130,7 +129,7 @@ json: LBRACKET STRING COLON RSQUARE
 ## STRING COLON
 ##
 
-<YOUR SYNTAX ERROR MESSAGE HERE>
+List closed in object field before being opened
 
 json: LBRACKET STRING COLON STRING COMMA RSQUARE
 ##
@@ -142,7 +141,7 @@ json: LBRACKET STRING COLON STRING COMMA RSQUARE
 ## STRING COLON json_value COMMA
 ##
 
-<YOUR SYNTAX ERROR MESSAGE HERE>
+Missing field key or value
 
 json: LBRACKET STRING COLON STRING STRING
 ##
@@ -155,7 +154,7 @@ json: LBRACKET STRING COLON STRING STRING
 ## STRING COLON json_value
 ##
 
-<YOUR SYNTAX ERROR MESSAGE HERE>
+Missing field separartor
 
 json: LBRACKET STRING STRING
 ##
@@ -168,7 +167,7 @@ json: LBRACKET STRING STRING
 ## STRING
 ##
 
-<YOUR SYNTAX ERROR MESSAGE HERE>
+Missing list separator
 
 json: STRING
 ##
@@ -180,5 +179,4 @@ json: STRING
 ##
 ##
 
-<YOUR SYNTAX ERROR MESSAGE HERE>
-
+Json top level value must be an oject
