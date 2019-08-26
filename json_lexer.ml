@@ -56,7 +56,7 @@ let digit_value c =
 let num_value buffer ~base ~first =
   let buf = Utf8.lexeme buffer in
   let c = ref 0 in
-  for i = first to String.length buf do
+  for i = first to String.length buf - 1 do
     let v = digit_value buf.[i] in
    assert (v < base);
     c := (base * !c) + v
@@ -72,6 +72,8 @@ let token buf =
   | '+' -> PLUS
   | '"' -> string buf
   | ':' -> COLON
+  | '[' -> LSQUARE
+  | ']' -> RSQUARE
   | '{' -> LBRACKET
   | '}' -> RBRACKET
   | ',' -> COMMA
@@ -84,7 +86,7 @@ let token buf =
       let number = num_value ~base:8 ~first:2 buf in
       INT number
   | decimal_ascii ->
-      let number = num_value ~base:8 ~first:2 buf in
+      let number = num_value ~base:10 ~first:0 buf in
       INT number
   | _ ->
     let position = fst @@ lexing_positions buf in
